@@ -7,6 +7,7 @@
     >
       <PostsComponent :posts="p" />
     </div>
+
     <div></div>
   </div>
   <div class="row d-flex justify-content-center">
@@ -43,6 +44,15 @@ export default {
       posts: computed(() => AppState.posts),
       account: computed(() => AppState.account),
       profile: computed(() => AppState.profile),
+
+      async changePage(page) {
+        try {
+          await pokemansService.changePage(page);
+        } catch (error) {
+          logger.error(error);
+          Pop.toast(error.message, "error");
+        }
+      },
     };
   },
 };

@@ -14,6 +14,8 @@
     <form class="hide d-flex rounded shadow flex-column p-5 bg-info">
       <h6>Name:</h6>
       <input v-model="account.name" type="text" />
+      <h6>Bio:</h6>
+      <input v-model="account.bio" type="text" />
       <h6>Graduated:</h6>
       <input v-model="account.graduated" type="text" />
       <h6>Linkedin:</h6>
@@ -24,7 +26,7 @@
       <input v-model="account.picture" type="text" />
       <button
         class="btn btn-success rounded-pill mt-3 hoverable selectable"
-        @onsubmit="editProfile"
+        @click="editProfile"
       >
         submit
       </button>

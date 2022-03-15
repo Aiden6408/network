@@ -16,7 +16,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
-        <li></li>
+        <div><SearchForm /></div>
       </ul>
       <router-link :to="{ name: 'Home' }">
         <div class="btn btn rounded-pill bg-success me-5 selectable">Home</div>

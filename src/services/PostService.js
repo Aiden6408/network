@@ -26,22 +26,16 @@ class PostService {
     }
 
 
-
     async deletePost(id) {
         const res = await api.delete('api/posts/' + id)
         logger.log(res.data)
         AppState.posts = AppState.posts.filter(p => p.id != id)
 
     }
-    // async olderPosts() {
-    //     const res = await api.get('api/posts/?page=2')
-    //     logger.log(res.data)
-    //     AppState.older = res.data.older
-    // }
 
     async like(id) {
-        await api.post(`api/posts/${id}/like`)
-        this.getAll()
+        await api.post(('api/posts/' + id + '/like'))
+
     }
 
 }

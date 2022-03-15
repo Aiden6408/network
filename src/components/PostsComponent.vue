@@ -69,6 +69,7 @@ export default {
       async like() {
         try {
           await postService.like(props.posts.id);
+          await postService.getAll();
         } catch (error) {
           Pop.toast(error.message);
         }
